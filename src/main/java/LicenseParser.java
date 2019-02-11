@@ -24,8 +24,8 @@ public class LicenseParser {
             JsonElement element = parser.parse(data);
             String name = element.getAsJsonObject().get(amfName).toString();
             JsonElement element2 = parser.parse(name);
-            Integer amr = element2.getAsJsonObject().get(AMR).getAsInt();
-            Integer evs = element2.getAsJsonObject().get(EVS).getAsInt();
+            int amr = element2.getAsJsonObject().get(AMR).getAsInt();
+            int evs = element2.getAsJsonObject().get(EVS).getAsInt();
 
             System.out.println("name = "+name + " : amr : "+amr+" : evs : "+evs);
             codec.add(AMRINT,amr);
