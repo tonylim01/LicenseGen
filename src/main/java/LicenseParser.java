@@ -7,6 +7,11 @@ import java.util.HashMap;
 public class LicenseParser {
 
     private String AMF = "amf0";
+    private String AMR = "AMR";
+    private String EVS = "EVS";
+
+    private int AMRINT = 0;
+    private int EVSINT = 1;
 
     public HashMap< Integer, ArrayList > Parser( String data)
     {
@@ -19,12 +24,12 @@ public class LicenseParser {
             JsonElement element = parser.parse(data);
             String name = element.getAsJsonObject().get(amfName).toString();
             JsonElement element2 = parser.parse(name);
-            Integer amr = element2.getAsJsonObject().get("AMR").getAsInt();
-            Integer evs = element2.getAsJsonObject().get("EVS").getAsInt();
+            Integer amr = element2.getAsJsonObject().get(AMR).getAsInt();
+            Integer evs = element2.getAsJsonObject().get(EVS).getAsInt();
 
             System.out.println("name = "+name + " : amr : "+amr+" : evs : "+evs);
-            codec.add(0,amr);
-            codec.add(1,evs);
+            codec.add(AMRINT,amr);
+            codec.add(EVSINT,evs);
             licenseCount.put(i, codec);
         }
         return licenseCount;
