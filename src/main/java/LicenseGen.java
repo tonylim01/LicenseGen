@@ -1,34 +1,9 @@
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.commons.net.util.Base64;
-
 public class LicenseGen {
-
-
-    private static String encrypt(String inputStr) throws NoSuchAlgorithmException, UnsupportedEncodingException{
-        String result="";
-        Base64 base64EnDe = new Base64();
-        try {
-            MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] byteValue = md5.digest(inputStr.getBytes());
-
-            result = base64EnDe.encodeToString(byteValue).replaceAll("\r\n", "");
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            throw e;
-        }
-
-        System.out.println( "Data : "+result );
-
-        byte [] data = base64EnDe.decode( result );
-
-        return result;
-    }
 
     public static void main( String[] args ) {
 
