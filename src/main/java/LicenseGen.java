@@ -50,12 +50,6 @@ public class LicenseGen {
                 LicenseParsing licenseParsing = new LicenseParsing( );
                 HashMap< Integer, ArrayList > licenseCount;
                 licenseCount = licenseParsing.Parser( dec );
-                ArrayList codec2;
-                codec2 = licenseCount.get( 3 );
-                Integer amr = ( Integer ) codec2.get( 0 );
-//            Integer amr = Integer.parseInt( ( String ) codec2.get( 0 ) );
-                Integer evs = ( Integer ) codec2.get( 1 );
-                System.out.println( "AMF Codec : " + amr + " Evs Codec : " + evs );
             }
 
 
