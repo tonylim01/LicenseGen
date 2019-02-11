@@ -6,9 +6,7 @@ import java.util.HashMap;
 public class LicenseGen {
 
     public static void main( String[] args ) {
-
         try {
-
             AES256Util aes256Util = new AES256Util();
             String enc = null;
             if(args[0].equals( "gen" )) {
@@ -26,8 +24,6 @@ public class LicenseGen {
                 HashMap< Integer, ArrayList > licenseCount;
                 licenseCount = licenseParsing.Parser( dec );
             }
-
-
         } catch ( GeneralSecurityException e ) {
             e.printStackTrace( );
         } catch ( UnsupportedEncodingException e ) {
