@@ -19,9 +19,9 @@ public class LicenseGen {
                 System.out.println( enc );
                 String dec = aes256Util.decrypt( enc );
                 System.out.println( dec );
-                LicenseParsing licenseParsing = new LicenseParsing( );
+                LicenseParser licenseParser = new LicenseParser( );
                 HashMap< Integer, ArrayList > licenseCount;
-                licenseCount = licenseParsing.Parser( dec );
+                licenseCount = licenseParser.Parser( dec );
             }
         } catch ( GeneralSecurityException e ) {
             e.printStackTrace( );

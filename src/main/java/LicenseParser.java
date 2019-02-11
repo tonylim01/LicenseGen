@@ -4,7 +4,9 @@ import com.google.gson.JsonParser;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LicenseParsing {
+public class LicenseParser {
+
+    private String AMF = "amf0";
 
     public HashMap< Integer, ArrayList > Parser( String data)
     {
@@ -13,7 +15,7 @@ public class LicenseParsing {
         HashMap< Integer, ArrayList > licenseCount = new HashMap< Integer, ArrayList >();
         for (int i = 0; i < 6; i++) {
             ArrayList codec = new ArrayList();
-            String amfName = "amf0"+i;
+            String amfName = AMF + i;
             JsonElement element = parser.parse(data);
             String name = element.getAsJsonObject().get(amfName).toString();
             JsonElement element2 = parser.parse(name);
